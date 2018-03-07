@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sass</title>
+    <link rel="stylesheet" href="../css/one.css">
+</head>
+<body>
+    <!--使用变量-->
+    <div class="one">
+        <div class="button">我是第一个button</div>
+        <div class="button button2">我是第二个button</div>
+    </div>
+
+    <!--嵌套-->
+    <div class="one">
+        <div class="one-sub">
+            <div class="one-sub-sub">我是子代的子代</div>
+        </div>
+    </div>
+
+    <!-- 父选择器表示符& -->
+    <div class="two">
+        <div class="two-sub">
+            <div class="two-sub-sub">我是父选择器表示符&</div>
+        </div>
+    </div>
+
+    <!--群组选择器嵌套(缺点是生成的css代码多)-->
+    <div class="three">
+        <div class="three-sub">
+            <div class="three-sub-sub">我是父选择器表示符&</div>
+            <div class="three-parent">我是一个测试群组元素</div>
+        </div>
+    </div>
+    <div class="four">
+        <div class="three-sub">
+            <div class="three-sub-sub">我是父选择器表示符&</div>
+            <div class="three-parent">我是一个测试群组元素</div>
+        </div>
+    </div>
+
+    <!--子组合选择器和同层组合选择器>+~-->
+    <div class="five">
+
+        <div class="five-sub">我是直接子代</div>
+        <div class="five-sub">我是直接子代</div>
+        <div class="five-con">
+            <div class="five-sub">我不是直接子代</div>
+        </div>
+
+    </div>
+    <div class="plus">我是直接相邻元素</div>
+    <div class="plus">我不是直接相邻的元素</div>
+    <div class="plus">我不是直接相邻的元素</div>
+
+    <!-- 嵌套属性 -->
+    <div class="six">我是嵌套属性</div>
+    <div class="seven">我也是嵌套属性</div>
+
+    <!-- 导入sass文件，不生成对应的css文件时用下划线格式 -->
+    <p>我是p标签</p>
+
+    <!-- 嵌套导入(将sass局部文件导入css规则内) -->
+    <h1>
+        <div class="import">
+            我是嵌套导入
+        </div>
+    </h1>
+    <div class="img-url"></div>
+
+    <!-- 混合器 -->
+    <div class="notice">我是混合器</div>
+
+
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+        
+    </script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,164 @@
+@charset "UTF-8";
+p {
+  color: skyblue;
+}
+
+p {
+  color: green;
+}
+
+/*使用变量*/
+.button {
+  margin: 100px auto;
+  width: 200px;
+  height: 40px;
+  line-height: 38px;
+  background: #ffbf00;
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid green;
+  border-radius: 4px;
+}
+
+.button2 {
+  color: #fff;
+  border: 1px solid #ffbf00;
+}
+
+/*嵌套*/
+.one {
+  margin: 100px auto;
+  width: 200px;
+}
+.one .one-sub {
+  height: 40px;
+  line-height: 38px;
+  background: #ffbf00;
+}
+.one .one-sub .one-sub-sub {
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid green;
+  border-radius: 4px;
+}
+
+/*父选择器表示符&(解决:hover,afer,before等)*/
+.two {
+  margin: 100px auto;
+  padding: 30px;
+  background: #999;
+  width: 200px;
+}
+.two .two-sub {
+  height: 40px;
+  line-height: 38px;
+  background: #ffbf00;
+}
+.two .two-sub .two-sub-sub {
+  position: relative;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid green;
+  border-radius: 4px;
+}
+.two .two-sub .two-sub-sub:hover {
+  color: #333;
+}
+.two .two-sub .two-sub-sub:before {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: -200px;
+  content: "我是two-sub-sub的before";
+}
+.two .two-sub .two-sub-sub:hover:before {
+  display: block;
+}
+
+/*群组选择器嵌套*/
+.three, .four {
+  margin: 100px auto;
+  padding: 30px;
+  background: #999;
+  width: 200px;
+}
+.three .three-sub, .four .three-sub {
+  height: 40px;
+  line-height: 38px;
+  background: #ffbf00;
+}
+.three .three-sub .three-sub-sub, .three .three-sub .three-parent, .four .three-sub .three-sub-sub, .four .three-sub .three-parent {
+  position: relative;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid green;
+  border-radius: 4px;
+}
+.three .three-sub .three-sub-sub:hover, .three .three-sub .three-parent:hover, .four .three-sub .three-sub-sub:hover, .four .three-sub .three-parent:hover {
+  color: #333;
+}
+.three .three-sub .three-sub-sub:before, .three .three-sub .three-parent:before, .four .three-sub .three-sub-sub:before, .four .three-sub .three-parent:before {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: -200px;
+  content: "我是two-sub-sub的before";
+}
+.three .three-sub .three-sub-sub:hover:before, .three .three-sub .three-parent:hover:before, .four .three-sub .three-sub-sub:hover:before, .four .three-sub .three-parent:hover:before {
+  display: block;
+}
+
+/*-子组合选择器和同层组合选择器>+~*/
+.five .five-sub {
+  color: #ffbf00;
+}
+.five > .five-sub {
+  color: #ff6060;
+}
+.five ~ .plus {
+  color: blue;
+}
+.five + .plus {
+  color: green;
+}
+
+/*嵌套属性*/
+.six {
+  margin: 10px 0;
+  color: #ff6060;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ffbf00;
+}
+
+.seven {
+  color: #ffbf00;
+  border: 1px solid #ff6060;
+  border-left: 2px solid green;
+  border-top: 2px solid blue;
+}
+
+/*嵌套导入*/
+h1 .import {
+  font-size: 20px;
+  color: blue;
+}
+h1 .import:hover {
+  color: green;
+}
+
+.img-url {
+  width: 100px;
+  height: 100px;
+  background: url(../img/logo.png) no-repeat center center;
+  background-size: 100% 100%;
+  /*这行注释可以出现*/
+}
+
+/*@mixin混合器大段样式的复用*/
+
+/*# sourceMappingURL=one.css.map */

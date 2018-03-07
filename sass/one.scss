@@ -1,0 +1,192 @@
+@import "color";
+@import "_bg";
+
+// $divcolor:#ff6060;
+// $buttoncolor:#fff;
+// $button-bg:#ffbf00;
+$buttonh:40px;
+$button_lh:38px;
+$buttonta:center;
+$divcolor:green;
+$buttonborder:1px solid $divcolor;
+$buttonfs:14px;
+$buttonbr:4px;
+$margin:0 auto;
+
+@mixin overflow-text{
+    overflow:hidden;
+    text-overflow:ellipsis;
+
+}
+
+
+
+/*使用变量*/
+.button{
+    $buttonc:#333;
+    $buttonmargin:100px auto;
+    margin:$buttonmargin;
+    width:200px;
+    height:$buttonh;
+    line-height:$button-lh;
+    background:$button_bg;
+    color:$buttonc;
+    font-size:$buttonfs;
+    text-align:$buttonta;
+    border:$buttonborder;
+    border-radius:$buttonbr;
+}
+
+.button2{
+    color:$buttoncolor;
+    border:1px solid $button_bg;
+}
+
+
+/*嵌套*/
+.one{
+    $buttonmargin:100px auto;
+    margin:$buttonmargin;
+    width:200px;
+    .one-sub{
+        height:$buttonh;
+        line-height:$button-lh;
+        background:$button-bg;
+        .one-sub-sub{
+            color:$buttoncolor;
+            font-size:$buttonfs;
+            text-align:$buttonta;
+            border:$buttonborder;
+            border-radius:$buttonbr;
+        }
+    }
+}
+
+
+/*父选择器表示符&(解决:hover,afer,before等)*/
+.two{
+    $buttonmargin:100px auto;
+    margin:$buttonmargin;
+    padding:30px;
+    background:#999;
+    width:200px;
+    .two-sub{
+        height:$buttonh;
+        line-height:$button-lh;
+        background:$button-bg;
+        .two-sub-sub{
+            position:relative;
+            color:$buttoncolor;
+            font-size:$buttonfs;
+            text-align:$buttonta;
+            border:$buttonborder;
+            border-radius:$buttonbr;
+            &:hover{
+                color:#333;
+            }
+            &:before{
+                display:none;
+                position:absolute;
+                top:0;
+                right:-200px;
+                content:"我是two-sub-sub的before"  
+            }
+            &:hover:before{
+                display:block;
+            }
+        }
+    }
+}
+
+
+/*群组选择器嵌套*/
+.three,.four{
+    $buttonmargin:100px auto;
+    margin:$buttonmargin;
+    padding:30px;
+    background:#999;
+    width:200px;
+    .three-sub{
+        height:$buttonh;
+        line-height:$button-lh;
+        background:$button-bg;
+        .three-sub-sub,.three-parent{
+            position:relative;
+            color:$buttoncolor;
+            font-size:$buttonfs;
+            text-align:$buttonta;
+            border:$buttonborder;
+            border-radius:$buttonbr;
+            &:hover{
+                color:#333;
+            }
+            &:before{
+                display:none;
+                position:absolute;
+                top:0;
+                right:-200px;
+                content:"我是two-sub-sub的before"  
+            }
+            &:hover:before{
+                display:block;
+            }
+        }
+    }
+}
+
+/*-子组合选择器和同层组合选择器>+~*/
+
+.five{
+    .five-sub{
+        color:#ffbf00;
+    }
+    > .five-sub{
+        color:#ff6060;
+    }
+    ~ .plus{
+        color:blue;
+    }
+    + .plus{
+        color:green;
+    }
+    
+}
+
+/*嵌套属性*/
+.six{
+    margin:10px 0;
+    color:#ff6060;
+    border:{
+        style:solid;
+        width:1px;
+        color:#ffbf00;
+    }
+}
+
+.seven{
+    color:#ffbf00;
+    border:1px solid #ff6060{
+        left:2px solid green;
+        top:2px solid blue;
+    }
+}
+
+/*嵌套导入*/
+h1{@import "_fontSize"}
+
+.img-url{
+    width:100px;
+    height:100px;
+    background:url(../img/logo.png)no-repeat center center; //这行注释不会出现
+    background-size:100% 100%;              /*这行注释可以出现*/
+}
+
+/*@mixin混合器大段样式的复用*/
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAKA,CAAC;EACG,KAAK,EAAC,OAAO",
+"sources": ["../sass/color.scss"],
+"names": [],
+"file": "color.css"
+}
